@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bangalore Metro Ticket Booking</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+  <link rel="stylesheet" href="./book.css">
+</head>
+
+<body>
+  <div class="signin">
+    <div class="content">
+      <h1 style="text-align: center;">Bangalore Metro Ticket</h1>
+      <form id="ticketForm">
+        <input type="text" name="name" id="name" placeholder="Enter your Name" required style="background: #333;">
+        <label style="display: flex;">
+          Gender:<input type="radio" name="gender" value="male">Male
+          <input type="radio" name="gender" value="female" checked>Female
+          <input type="radio" name="gender" value="transgender">Transgender
+        </label>
+        <input type="tel" name="mobile" id="mobile" placeholder="Enter your Mobile No" required
+          style="background: #333;">
+        <label for="age">Age:</label>
+        <input type="number" name="age" id="age" required
+          style="width: 100px;  margin-top: 20px; background: #333;"><br><br>
+        <label for="stationFrom">From:</label>
+        <select name="stationFrom" id="stationFrom">
+          <option value="Marathalli">Select</option>
+          <option value="Marathalli">Marathalli</option>
+          <option value="K.R Puram">K.R Puram</option>
+          <option value="Kundaligate">Kundalhalligate</option>
+        </select>
+        <label for="stationTo">To:</label>
+        <select name="stationTo" id="stationTo">
+          <option value="Marathalli">Select</option>
+          <option value="K.R Puram">White Field</option>
+          <option value="Kundaligate">Kormagla</option>
+          <option value="Kundaligate">church Street</option>
+        </select><br>
+        <button type="button" id="addPassengerBtn" class="btn">Add Passenger</button>
+        <button type="submit" class="btn">Book Ticket</button>
+      </form>
+    </div>
+  </div>
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Passenger Details</h2>
+      <textarea id="passengerDetails" rows="40" cols="50" readonly></textarea><br>
+      <button id="downloadBtn" class="btn">Download</button>
+    </div>
+  </div>
+
+  <script src="./book.js"></script>
+</body>
+
+</html>
